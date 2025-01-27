@@ -1,3 +1,4 @@
+
 /**
  * Classe qui permet de décorer le voilier d'un foil.
  * Cette classe étend ArmementSupplementaire.
@@ -6,7 +7,14 @@
  */
 public class ArmementFoil extends ArmementSupplementaire {
 
+    /**
+     * Atout spécifique de l'armement.
+     */
     String atout = "foil";
+
+    /**
+     * Voilier à décorer.
+     */
     Voilier voilier;
 
     /**
@@ -15,7 +23,15 @@ public class ArmementFoil extends ArmementSupplementaire {
      * @param voilier le voilier à équiper du foil
      */
     public ArmementFoil(Voilier voilier) {
+
+        /**
+         * On reprend les attributs de la classe mère.
+         */
         super(voilier);
+
+        /**
+         * Voilier à décorer.
+         */
         this.voilier = voilier;
     }
 
@@ -27,5 +43,4 @@ public class ArmementFoil extends ArmementSupplementaire {
     public String toString() {
         return voilier.toString() + " est équipé " + atout;
     }
-
 }
