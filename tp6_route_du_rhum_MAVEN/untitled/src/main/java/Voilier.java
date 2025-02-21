@@ -36,9 +36,10 @@ public abstract class Voilier {
      * @param cl La classe du voilier (par exemple, Monocoque, Multicoque).
      */
     public Voilier(String name, SuivreRoute suivreRoute, String ns, EnumClasse cl) {
-        nomSkipper = ns;
-        classe = cl;
-        nom = name;
+        this.nomSkipper = ns;
+        this.classe = cl;
+        this.nom = name;
+        this.suivreRoute = suivreRoute; // Initialisation de suivreRoute
     }
 
     /**
@@ -59,19 +60,25 @@ public abstract class Voilier {
 
     /**
      * Retourne une chaîne de caractères représentant la route suivie par le voilier.
+     * Si la route n'est pas définie, retourne un message indiquant qu'aucune route n'est sélectionnée.
      *
      * @return Une chaîne décrivant la route suivie par le voilier.
      */
     public String getSuivreRoute() {
-        return "route suivie : " + this.suivreRoute;
+        return (this.suivreRoute != null) ? "Route suivie : " + this.suivreRoute : "Aucune route définie";
     }
 
     /**
      * Applique la route définie pour ce voilier en invoquant la méthode <code>suivreRoute</code>
      * de l'interface <code>SuivreRoute</code>.
+     * Avant d'appliquer la route, la méthode vérifie que la route n'est pas nulle.
      */
     public void appliquerSuivreRoute() {
-        suivreRoute.suivreRoute();
+        if (suivreRoute != null) {
+            suivreRoute.suivreRoute();
+        } else {
+            System.out.println("Aucune route définie pour ce voilier.");
+        }
     }
 
     /**
