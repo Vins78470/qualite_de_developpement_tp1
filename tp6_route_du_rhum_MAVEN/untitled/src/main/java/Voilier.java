@@ -1,31 +1,87 @@
-
+/**
+ * La classe <code>Voilier</code> représente un voilier, avec des informations telles que son nom,
+ * son skipper, sa classe et la route qu'il suit. La classe permet de définir et d'appliquer une route
+ * spécifique grâce à l'interface <code>SuivreRoute</code>.
+ */
 public abstract class Voilier {
+
+    /**
+     * Le nom du voilier.
+     */
     String nom;
+
+    /**
+     * L'objet qui représente la route à suivre par le voilier.
+     */
     SuivreRoute suivreRoute;
+
+    /**
+     * Le nom du skipper du voilier.
+     */
     String nomSkipper;
+
+    /**
+     * La classe du voilier (Monocoque, Multicoque, etc.).
+     */
     EnumClasse classe;
 
-    public Voilier(String name, SuivreRoute suivreRoute,String ns,EnumClasse cl)
-    {
+    /**
+     * Constructeur de la classe <code>Voilier</code>.
+     * Ce constructeur initialise les informations de base d'un voilier, telles que son nom, le suivi de la route,
+     * le nom du skipper et la classe du voilier.
+     *
+     * @param name Le nom du voilier.
+     * @param suivreRoute L'objet représentant la route à suivre.
+     * @param ns Le nom du skipper du voilier.
+     * @param cl La classe du voilier (par exemple, Monocoque, Multicoque).
+     */
+    public Voilier(String name, SuivreRoute suivreRoute, String ns, EnumClasse cl) {
         nomSkipper = ns;
         classe = cl;
         nom = name;
     }
 
-    public Voilier(){};
+    /**
+     * Constructeur par défaut de la classe <code>Voilier</code>.
+     * Ce constructeur crée une instance de <code>Voilier</code> sans initialiser les propriétés.
+     */
+    public Voilier() {}
 
-    public void setSuivreRoute(SuivreRoute sr){
+    /**
+     * Définit la route à suivre pour ce voilier.
+     * Cette méthode permet de modifier l'objet <code>SuivreRoute</code> associé au voilier.
+     *
+     * @param sr L'objet représentant la route à suivre.
+     */
+    public void setSuivreRoute(SuivreRoute sr) {
         this.suivreRoute = sr;
     }
-    public String getSuivreRoute(){
-        return "route suivi : "+this.suivreRoute;
+
+    /**
+     * Retourne une chaîne de caractères représentant la route suivie par le voilier.
+     *
+     * @return Une chaîne décrivant la route suivie par le voilier.
+     */
+    public String getSuivreRoute() {
+        return "route suivie : " + this.suivreRoute;
     }
-    public void appliquerSuivreRoute(){
+
+    /**
+     * Applique la route définie pour ce voilier en invoquant la méthode <code>suivreRoute</code>
+     * de l'interface <code>SuivreRoute</code>.
+     */
+    public void appliquerSuivreRoute() {
         suivreRoute.suivreRoute();
     }
+
+    /**
+     * Retourne une chaîne de caractères représentant le nom du voilier.
+     * Cette méthode est une version personnalisée de la méthode <code>toString</code>.
+     *
+     * @return Le nom du voilier.
+     */
+    @Override
     public String toString() {
         return nom;
     }
-
-
 }
