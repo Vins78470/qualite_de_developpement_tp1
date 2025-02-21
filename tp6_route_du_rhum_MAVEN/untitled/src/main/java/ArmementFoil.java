@@ -1,4 +1,5 @@
 
+
 /**
  * Classe qui permet de décorer le voilier d'un foil.
  * Cette classe étend ArmementSupplementaire.

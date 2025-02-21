@@ -1,4 +1,6 @@
-public  class InscriptionMonocoque extends InscriptionVoilier{
+
+
+public  class InscriptionMonocoque extends InscriptionVoilier {
 
     @Override
     public Voilier factoryMethod(String nom, SuivreRoute suivreRoute, String nomSkipper, EnumClasse enumClasse) {

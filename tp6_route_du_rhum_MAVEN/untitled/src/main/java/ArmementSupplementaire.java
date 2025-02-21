@@ -1,4 +1,3 @@
-
 /**
  * Classe abstraite représentant un armement supplémentaire pour un voilier.
  * Cette classe est destinée à être étendue par des classes spécifiques d'armement.
